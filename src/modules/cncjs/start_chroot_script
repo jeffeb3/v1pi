@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+# Node.js install script
+#   Installs node.js in a raspberry pi image
+# Written by JeffEb3
+# GPL V3
+########
+set -x
+set -e
+
+export LC_ALL=C
+
+source /common.sh
+
+### Script ####
+
+unpack /filesystem/home/pi /home/pi pi
+unpack /filesystem/root /
+
+pushd /home/pi
+
+  if [ "$CNCJS_INCLUDE_CNCJS" == "yes" ]
+  then
+    echo "--- Installing cnc.js"
+    npm install -g cncjs@latest --unsafe-perm
+
+    # start it by default
+    update-rc.d cncjs defaults 95
+  fi
+
+  if [ "$CNCJS_EDIT_HAPROXY" == "yes" ]
+  then
+    if [ "$OCTOPI_INCLUDE_HAPROXY" == "yes" ]
+    then
+      echo "--- Editing the haproxy to support octoprint and cnc.js"
+      sed -i -e "s/:::80/:::4080/g" /etc/haproxy/haproxy.cfg
+      cat /filesystem/append_to_haproxy.cfg >> /etc/haproxy/haproxy.cfg
+
+      # start it by default
+      update-rc.d landingPage defaults 95
+
+    else
+      echo "Configured to edit haproxy, but haproxy isn't installed by octopi"
+      return 1
+    fi
+  fi
+
+popd
+

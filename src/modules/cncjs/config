@@ -1,0 +1,9 @@
+###############################################################################
+# All our config settings must start with CNCJS
+
+# CNCJS options
+[ -n "$CNCJS_INCLUDE_CNCJS" ] || CNCJS_INCLUDE_CNCJS=yes
+[ -n "$CNCJS_EDIT_HAPROXY" ] || CNCJS_EDIT_HAPROXY=yes
+[ -n "$CNCJS_INCLUDE_CNCJS_PS3_PENDANT" ] || CNCJS_INCLUDE_CNCJS_PS3_PENDANT=yes
+
+

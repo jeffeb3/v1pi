@@ -1,0 +1,28 @@
+# Configuration for /etc/init.d/$NAME
+#
+# Needs to define these values (or they might get chosen as defauls in the init.d file:
+#
+#  - RUNAS_USER
+#  - DAEMON_ARGS
+#  - DAEMON
+#  - UMASK
+#  - START
+
+# The init.d script will only run if this variable non-empty.
+RUNAS_USER=pi
+
+# To what host to bind daemon, default is 127.0.0.1
+HOST=0.0.0.0
+# On what port to run daemon, default is 5000
+PORT=8001
+# What arguments to pass to executable, usually no need to touch this
+DAEMON_ARGS="$PORT --bind $HOST"
+
+# Path to the executable, use this to override the default setting "/usr/bin/$NAME"
+DAEMON=/home/pi/landingPage/serve
+
+# Umask of files executable generates, Change this to 000 if running executable as its own, separate user
+UMASK=022
+
+# Should we run at startup?
+START=yes

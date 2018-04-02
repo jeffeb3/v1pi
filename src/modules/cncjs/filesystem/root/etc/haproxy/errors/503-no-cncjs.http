@@ -1,0 +1,101 @@
+HTTP/1.0 503 Service Unavailable
+Cache-Control: no-cache
+Connection: close
+Content-Type: text/html
+
+<html>
+    <head>
+        <title>CNC.js is currently not running</title>
+        <style>
+            body {
+                margin: 0;
+                font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-size: 14px;
+                line-height: 20px;
+                color: #333333;
+                background-color: #ffffff;
+            }
+
+            code {
+                font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+                font-size: 12px;
+                border-radius: 3px;
+                padding: 2px 4px;
+                color: #d14;
+                white-space: nowrap;
+                background-color: #f7f7f7;
+                border: 1px solid #e1e1e8;
+            }
+
+            pre {
+                font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+                font-size: 12px;
+                border-radius: 3px;
+                padding: 2px 4px;
+                white-space: nowrap;
+                background-color: #f7f7f7;
+                border: 1px solid #e1e1e8;
+            }
+
+            @media (max-width: 767px) {
+                .wrapper {
+                    padding: 20px;
+                }
+            }
+
+            @media (min-width: 768px) {
+                .wrapper {
+                    position: absolute;
+                    width: 750px;
+                    height: 450px;
+                    top: 50%;
+                    left: 50%;
+                    margin: -225px 0 0 -375px;
+                }
+            }
+
+            h1 {
+                line-height: 1.3;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>The CNC.js server is currently not running</h1>
+
+            <p>
+                If you just started up your Raspberry Pi, please wait a couple of seconds, then
+                try to refresh this page.
+            </p>
+
+            <p>
+                If the issue persists, please log into your Raspberry Pi via SSH and check the following:
+            </p>
+
+            <ul>
+                <li>
+                    Verify that the process is running
+                </li>
+                <li>
+                    If it isn't, the question is why. Take a look into
+                    <code>log</code>, there might
+                    be an error logged in there that helps to determine
+                    what's wrong.
+                </li>
+                <li>
+                    You might also want to try if you can restart the server
+                    (if no obvious error is visible):
+                    <code>sudo service cncjs restart</code>.
+                </li>
+            </ul>
+
+            <p>
+                If all that doesn't help to trouble shoot the issue, you can seek
+                support on the <a href="TODO">Community Forum</a>.
+                Please provide your Pi <strong>and</strong> CNC.js versions as well as your <code>log</code>
+                and explain what you already tried and observed as detailed as possible.
+            </p>
+        </div>
+    </body>
+</html>
+

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pushd /home/pi/landingPage
+
+python3 -m http.server $@

@@ -1,0 +1,21 @@
+
+<script>
+    // Allows port numbers in a hrefs 
+    document.addEventListener('click', function(event) {
+      var target = event.target;
+      if (target.tagName.toLowerCase() == 'a')
+      {
+          var port = target.getAttribute('href').match(/^:(\d+)(.*)/);
+          if (port)
+          {
+             target.href = port[2];
+             target.port = port[1];
+          }
+      }
+    }, false);
+</script>
+
+This is a landing page to direct you to the services that... Argh. Not in the mood to write right now.
+
+<a href=":4080">Octoprint</a>
+<a href=":5080">CNC.js</a>

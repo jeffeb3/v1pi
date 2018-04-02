@@ -1,0 +1,10 @@
+###############################################################################
+# All our config settings must start with NODEJS
+
+# node.js archive
+[ -n "$NODEJS_VERSION_STRING" ]  || NODEJS_VERSION_STRING="v6.2.1"
+[ -n "$NODEJS_VERSION_FOLDER" ]  || NODEJS_VERSION_FOLDER="node-$NODEJS_VERSION_STRING-linux-armv6l"
+[ -n "$NODEJS_VERSION_TAR" ]     || NODEJS_VERSION_TAR="$NODEJS_VERSION_FOLDER.tar.gz"
+[ -n "$NODEJS_VERSION_ARCHIVE" ] || NODEJS_VERSION_ARCHIVE="https://nodejs.org/dist/v6.2.1/$NODEJS_VERSION_TAR"
+[ -n "$NODEJS_INCLUDE_NVM" ] || NODEJS_INCLUDE_NVM=yes
+

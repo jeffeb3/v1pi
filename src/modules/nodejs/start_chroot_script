@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Node.js install script
+#   Installs node.js in a raspberry pi image
+# Written by JeffEb3
+# GPL V3
+########
+set -x
+set -e
+
+export LC_ALL=C
+
+source /common.sh
+
+### Script ####
+
+pushd /home/pi
+
+  echo "--- Downloading node.js"
+  sudo -u pi wget $NODEJS_VERSION_ARCHIVE
+  sudo -u pi tar -xzf $NODEJS_VERSION_TAR
+  $NODEJS_VERSION_FOLDER/bin/node -v
+
+  echo "--- Installing node.js"
+  cp -R $NODEJS_VERSION_FOLDER/* /usr/local/
+
+popd

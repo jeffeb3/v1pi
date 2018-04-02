@@ -2,3 +2,7 @@
 	path = dependencies/CustomPiOS
 	url = https://github.com/guysoft/CustomPiOS.git
 	branch = CustomPiOS
+[submodule "dependencies/OctoPi"]
+	path = dependencies/OctoPi
+	url = https://github.com/guysoft/OctoPi.git
+	branch = devel
