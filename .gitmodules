@@ -1,0 +1,4 @@
+[submodule "dependencies/CustomPiOS"]
+	path = dependencies/CustomPiOS
+	url = https://github.com/guysoft/CustomPiOS.git
+	branch = CustomPiOS
