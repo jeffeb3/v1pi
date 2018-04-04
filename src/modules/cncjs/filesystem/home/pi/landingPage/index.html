@@ -1,21 +1,47 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
 
-<script>
-    // Allows port numbers in a hrefs 
-    document.addEventListener('click', function(event) {
-      var target = event.target;
-      if (target.tagName.toLowerCase() == 'a')
-      {
-          var port = target.getAttribute('href').match(/^:(\d+)(.*)/);
-          if (port)
-          {
-             target.href = port[2];
-             target.port = port[1];
-          }
-      }
-    }, false);
-</script>
+    <body>
+        <div class="container">
+            <header>
+                <a href="https://v1engineering.com">
+                    <img src="v1engineering.png" width="1000" height="134">
+                </a>
+                <h2>Serve up Octoprint or CNC.js</h2>
+                <div class="about">
+                    <a href="https://github.com/jeffeb3/v1pi">[about]</a>
+                </div>
+            </header>
+        </div>
+        <div class="row">
+            <div class="column">
+                <a href="#" onclick="javascript:window.location.port=4080">
+                    <div class="octoprint">
+                        <img src="octoprint.png" width="249" height="200">
+                        <br>
+                        Octoprint
+                    </div>
+                </a>
+            </div>
+            <div class="column">
+                <a href="#" onclick="javascript:window.location.port=5080">
+                    <div class="cncjs">
+                        <img src="cncjs.png" width="320" height="200">
+                        <br>
+                        CNC.js
+                    </div>
+                </a>
+            </div>
+        </div>
 
-This is a landing page to direct you to the services that... Argh. Not in the mood to write right now.
+        <div class="container">
+            <footer>
+                <a href="https://github.com/jeffeb3/v1pi">[v1pi]</a>
+                <a href="https://v1engineering.com">[v1engineering]</a>
+            </footer>
+        </div>
+    </body>
+</html>
 
-<a href=":4080">Octoprint</a>
-<a href=":5080">CNC.js</a>

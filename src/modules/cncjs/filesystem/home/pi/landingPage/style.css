@@ -1,0 +1,74 @@
+
+div.container {
+    width: 100%;
+    min-width: 1040;
+}
+header {
+    padding: 1em;
+    color: red;
+    background-color: #222222;
+    text-align: center;
+}
+header h2 {
+    line-height: 0px;
+}
+footer {
+    padding: 1em;
+    color: red;
+    background-color: #222222;
+    text-align: center;
+}
+div.about {
+    padding: 0;
+    text-align: right;
+}
+div.about a {
+    color: white;
+}
+footer {
+    padding: 1em;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+div.column {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+
+div.octoprint {
+    border-style: solid;
+    height: 260px;
+    background-color: #0A5300;
+}
+div.cncjs {
+    border-style: solid;
+    height: 260px;
+    background-color: #999999;
+}
+
+
+div.cncjs img {
+    margin: auto;
+    padding: 15px;
+}
+div.octoprint img {
+    margin: auto;
+    padding: 15px;
+}
+
+div.row {
+    margin: auto;
+    width: 1000px;
+    padding: 1em;
+}
+
+/* Clear floats after the columns */
+div.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
