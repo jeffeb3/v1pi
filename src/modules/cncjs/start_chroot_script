@@ -36,8 +36,10 @@ pushd /home/pi
       cat /filesystem/append_to_haproxy.cfg >> /etc/haproxy/haproxy.cfg
 
       # make links to the logos
-      ln -s /usr/local/lib/node_modules/cncjs/dist/cnc/web/images/logo-badge-256x256.png cncjs.png
-      ln -s /home/pi/oprint/lib/python2.7/site-packages/octoprint/static/img/logo.png octoprint.png
+      pushd landingPage
+        ln -s /usr/local/lib/node_modules/cncjs/dist/cnc/web/images/logo-badge-256x256.png cncjs.png
+        ln -s /home/pi/oprint/lib/python2.7/site-packages/octoprint/static/img/logo.png octoprint.png
+      popd
 
       # start it by default
       update-rc.d landingPage defaults 95
