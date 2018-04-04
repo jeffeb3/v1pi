@@ -22,5 +22,6 @@ pushd /home/pi
 
   echo "--- Installing node.js"
   cp -R $NODEJS_VERSION_FOLDER/* /usr/local/
+  rm -rf $NODEJS_VERSION_FOLDER $NODEJS_VERSION_TAR
 
 popd
