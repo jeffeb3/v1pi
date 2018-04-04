@@ -1,0 +1,9 @@
+{
+    "state": {
+        "widgets": {
+            "connection": {
+                "autoReconnect": false
+            }
+        }
+    }
+}
