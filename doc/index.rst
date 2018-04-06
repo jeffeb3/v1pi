@@ -1,7 +1,7 @@
-$project
+V1PI
 ========
 
-For full documentation visit [$project at rtfd](https://$project.rtfd.org).
+For full documentation visit [V1PI at rtfd](https://v1pi.rtfd.io).
 
 What is it?
 -----------
