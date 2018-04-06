@@ -1,7 +1,7 @@
 V1PI
 ========
 
-For full documentation visit [V1PI at rtfd](https://v1pi.rtfd.io).
+For full documentation visit `V1PI at rtfd <https://v1pi.rtfd.io>`_.
 
 What is it?
 -----------
