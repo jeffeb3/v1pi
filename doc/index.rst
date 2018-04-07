@@ -3,8 +3,6 @@
 V1PI
 #############
 
-For full documentation visit `V1PI at rtfd <http://v1pi.rtfd.io>`_.
-
 What is it?
 ===========
 
@@ -22,7 +20,7 @@ any tragedies from someone using my software.
 Let's Do It
 ===========
 
-Great, let's flash an SD card with the image and get to making dirt in the shop!
+Great, let's flash an SD card with the image and get to making dust in the shop!
 
 Step 1: Download the image
 ==========================
@@ -64,22 +62,22 @@ Connect to Hot Spot
 -------------------
 
 * The Hot Spot will show up with an ssid of ``v1pi`` and a connection password of ``raspberry``.
-* Your computer might complain that you don't have an Internet connection. That's normal, the pi
-  doesn't have Internet
+* Your computer might complain that you don't have an Internet connection. That's normal. The pi
+  doesn't have Internet.
 * If you connect with this method, the pi's ip address is ``192.168.50.1``
-* Open a web browser and put ``https://192.168.50.1`` in the address bar.
+* Open `http://192.168.50.1 <http://192.168.50.1>`_
 
 Connect Through Your WiFi
 -------------------------
 
 * The pi will get it's IP address from your router. If you know how to find the IP address from your
-  router, then you can do that.
+  router, then you can do that, and put ``http://<the ip address>`` in your browser's address bar.
 * The pi will also advertise it's address via `http://v1pi.local <http://v1pi.local>`_
 
   * Macs: Just to there.
   * Linux (including other pi's): Install avahi-daemon, and then go there.
   * Windows: Check out Adafruit's guide `Here <https://learn.adafruit.com/bonjour-zeroconf-networking-for-windows-and-linux/overview>`_
-  * Android: I haven't got a good way to do this from android, so I would ``ping vpi.local`` from a
+  * Android: I haven't got a good way to do this from android, so I would ``ping v1pi.local`` from a
     computer, and see what address it's pinging, and put that in my android address bar.
 
 * As a last resort, you can connect a monitor and keyboard. The pi will boot up to a login prompt.
@@ -132,10 +130,10 @@ The password is stored on the root file system in ``/etc/hostapd/hostapd.conf``.
 through ssh, or you can edit the file on the sd card from your computer (but not in notepad, use
 notepad++)
 
-    sudo nano /etc/hostapd/hostapd.conf
+    ``sudo nano /etc/hostapd/hostapd.conf``
 
 Go down to where it says: ``wpa_passphrase=raspberry`` and change the word raspberry to something
-you want. Save the file (in nano, it's [Ctrl+w], [Ctrl+x]).
+you want. Save the file (in nano, it's [Ctrl+x], y, enter).
 
 That's it
 =========
