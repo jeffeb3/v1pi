@@ -47,6 +47,8 @@ in the boot filesystem on the SD card. I prefer to edit the file before the firs
 The file contains instructions on how to edit it. For example, here are the parts I changed in
 my configuration (the names have been changed to protect the innocent):
 
+.. code-block:: c
+
     network={
         ssid="Ryan"
         psk="Seacrest"
