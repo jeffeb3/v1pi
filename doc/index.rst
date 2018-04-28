@@ -7,7 +7,7 @@ What is it?
 ===========
 
 It's an image for a raspberry pi, where I've configured as much as possible to help you get started
-quickly making things with your v1engineering.com machines.
+quickly making things with your `v1engineering.com <v1engineering.com>`_ machines.
 
 .. image:: img/v1pi.png
 
@@ -15,8 +15,8 @@ Safety Notice
 =============
 
 Please be safe. CNC routers, even small ones, with tiny bits can make mistakes, and quickly end up
-in a dangerous situation, causing a fire that can quickly grow to serious damage. Don't leave your
-machine unattended. I am not responsible for anything you do, but I really don't want to hear about
+in a dangerous situation, causing a fire that can quickly grow to serious damage. **Don't leave your
+machine unattended.** I am not responsible for anything you do, but I really don't want to hear about
 any tragedies from someone using my software.
 
 Set Up
@@ -45,3 +45,8 @@ Be sure to look at the (much more detailed) documentation from OctoPi, OctoPrint
  * OctoPrint: https://octoprint.org/
  * CNC.js: https://cnc.js.org/
 
+More Documentation
+==================
+
+:doc:`setup`
+:doc:`wifi-setup`
