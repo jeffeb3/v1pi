@@ -37,8 +37,4 @@ RUN set -x \
         qemu-user-static \
     && rm -rf /var/lib/apt/lists/*
 
-# qemu stuff
-RUN update-binfmts --enable qemu-arm
-#    && mount binfmt_misc -t binfmt_misc /proc/sys/fs/binfmt_misc
-
 CMD ["/bin/bash"]
