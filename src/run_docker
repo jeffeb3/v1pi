@@ -1,0 +1,11 @@
+docker run \
+  -v `pwd`:/custompios \
+  -w /custompios \
+  --privileged=true \
+  --cap-add=CAP_MKNOD \
+  -it \
+  --name=build_dist \
+  --rm \
+  custom_pios \
+  ./build_dist
+

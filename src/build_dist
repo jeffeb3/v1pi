@@ -2,7 +2,13 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 export DIST_PATH=${DIR}
-export CUSTOM_PI_OS_PATH=${DIR}/../dependencies/CustomPiOS/src
+export CUSTOM_PI_OS_PATH=${DIR}/dependencies/CustomPiOS/src
 export PATH=$PATH:$CUSTOM_PI_OS_PATH
+
+
+if [ -f /.dockerenv ]; then
+    update-binfmts --enable qemu-arm
+    mount binfmt_misc -t binfmt_misc /proc/sys/fs/binfmt_misc
+fi
 
 ${CUSTOM_PI_OS_PATH}/build_custom_os $@
