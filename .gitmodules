@@ -1,8 +1,8 @@
 [submodule "dependencies/CustomPiOS"]
-	path = dependencies/CustomPiOS
+	path = src/dependencies/CustomPiOS
 	url = https://github.com/guysoft/CustomPiOS.git
 	branch = CustomPiOS
 [submodule "dependencies/OctoPi"]
-	path = dependencies/OctoPi
+	path = src/dependencies/OctoPi
 	url = https://github.com/guysoft/OctoPi.git
 	branch = devel
