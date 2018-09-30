@@ -49,5 +49,7 @@ More Documentation
 ==================
 
 :doc:`setup`
+
 :doc:`wifi-setup`
+
 :doc:`camera-setup`
