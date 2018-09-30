@@ -48,8 +48,8 @@ Be sure to look at the (much more detailed) documentation from OctoPi, OctoPrint
 More Documentation
 ==================
 
-:doc:`setup`
+1. :doc:`setup`
 
-:doc:`wifi-setup`
+1. :doc:`wifi-setup`
 
-:doc:`camera-setup`
+1. :doc:`camera-setup`

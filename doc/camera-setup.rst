@@ -15,15 +15,15 @@ Set up CNC.js settings
 
 1. In CNC.js, click the gear (for settings) in the Webcam widget.
 
-.. image:: img/cncjs_webcam_gear.jpg
+.. image:: img/cncjs_webcam_gear.png
 
 2. Select "Use a M-JPEG stream over HTTP" option, and put this URL for your video stream: `webcam/?action=stream`.
 
-.. image:: img/cncjs_webcam_settings.jpg
+.. image:: img/cncjs_webcam_settings.png
 
 2. Click Save Changes.
 
 3. Enable the camera with the enable toggle.
 
-.. image:: img/cncjs_webcam_enable.jpg
+.. image:: img/cncjs_webcam_enable.png
 
