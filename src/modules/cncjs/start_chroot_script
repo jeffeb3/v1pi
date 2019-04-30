@@ -31,14 +31,18 @@ pushd /home/pi
   then
     if [ "$OCTOPI_INCLUDE_HAPROXY" == "yes" ]
     then
-      echo "--- Editing the haproxy to support octoprint and cnc.js"
-      sed -i -e "s/:::80/:::4080/g" /etc/haproxy/haproxy.cfg
-      cat /filesystem/append_to_haproxy.cfg >> /etc/haproxy/haproxy.cfg
 
       # make links to the logos
+      pushd landingPage/static
+        ln -s /usr/local/lib/node_modules/cncjs/dist/cnc/web/images/logo-badge-256x256.png logo_cncjs.png
+        ln -s /home/pi/oprint/lib/python2.7/site-packages/octoprint/static/img/logo.png logo_octoprint.png
+      popd
+
+      #build virtualenv
       pushd landingPage
-        ln -s /usr/local/lib/node_modules/cncjs/dist/cnc/web/images/logo-badge-256x256.png cncjs.png
-        ln -s /home/pi/oprint/lib/python2.7/site-packages/octoprint/static/img/logo.png octoprint.png
+        sudo -u pi virtualenv flask
+        sudo -u pi ./flask/bin/pip install --upgrade pip
+        PIP_DEFAULT_TIMEOUT=60 sudo -u pi ./flask/bin/pip install flask
       popd
 
       # start it by default

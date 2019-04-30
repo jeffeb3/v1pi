@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="static/style.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <header>
+                <a href="https://v1engineering.com">
+                    <img src="static/v1engineering.png" width="1000" height="134">
+                </a>
+                <h2>Serve up Octoprint or CNC.js</h2>
+                <div class="about">
+                    <a href="https://github.com/jeffeb3/v1pi">[about]</a>
+                </div>
+            </header>
+        </div>
+        <div class="row">
+            <div class="column">
+                <a href="#" onclick="javascript:window.location.port=4080">
+                    <div class="octoprint">
+                        <img src="static/logo_octoprint.png" width="249" height="200">
+                        <br>
+                        Octoprint
+                    </div>
+                </a>
+                {% if octoprint_running %}
+                    <h3>Octoprint Running
+                        <form method="post" action="/">
+                            <input type="submit" name="octoprint" value="Stop">
+                            <input type="submit" name="octoprint" value="Restart">
+                        </form>
+                    </h3>
+                {% else %}
+                    <h3>Octoprint <em>Stopped</em>
+                        <form method="post" action="/">
+                            <input type="submit" name="octoprint" value="Start">
+                        </form>
+                    </h3>
+                {% endif %}
+            </div>
+            <div class="column">
+                <a href="#" onclick="javascript:window.location.port=5080">
+                    <div class="cncjs">
+                        <img src="static/logo_cncjs.png" width="200" height="200">
+                        <br>
+                        CNC.js
+                    </div>
+                </a>
+                {% if cncjs_running %}
+                    <h3>CNC.js Running
+                        <form method="post" action="/">
+                            <input type="submit" name="cncjs" value="Stop">
+                            <input type="submit" name="cncjs" value="Restart">
+                        </form>
+                    </h3>
+                {% else %}
+                    <h3>CNC.js <em>Stopped</em>
+                        <form method="post" action="/">
+                            <input type="submit" name="cncjs" value="Start">
+                        </form>
+                    </h3>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="container">
+            <footer>
+                <a href="https://github.com/jeffeb3/v1pi">[v1pi]</a>
+                <a href="https://v1engineering.com">[v1engineering]</a>
+            </footer>
+        </div>
+    </body>
+</html>
+

@@ -3,6 +3,7 @@
 # Needs to define these values (or they might get chosen as defauls in the init.d file:
 #
 #  - RUNAS_USER
+#  - RUNAS_DIR
 #  - DAEMON_ARGS
 #  - DAEMON
 #  - UMASK
@@ -16,10 +17,15 @@ HOST=0.0.0.0
 # On what port to run daemon, default is 5000
 PORT=8001
 # What arguments to pass to executable, usually no need to touch this
-DAEMON_ARGS="$PORT --bind $HOST"
+DAEMON_ARGS=" run --port $PORT --host $HOST"
+
+# Tell flask where to find the script
+RUNAS_DIR=/home/pi/landingPage/
+
+FLASK_APP=/home/pi/landingPage/serve.py
 
 # Path to the executable, use this to override the default setting "/usr/bin/$NAME"
-DAEMON=/home/pi/landingPage/serve
+DAEMON=/home/pi/landingPage/flask/bin/flask
 
 # Umask of files executable generates, Change this to 000 if running executable as its own, separate user
 UMASK=022
