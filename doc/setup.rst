@@ -126,6 +126,11 @@ notepad++)
 Go down to where it says: ``wpa_passphrase=raspberry`` and change the word raspberry to something
 you want. Save the file (in nano, it's [Ctrl+x], y, enter).
 
+Set up a Webcam
+=========
+
+If you want to set up a webcam, the instructions are here :doc:`camera-setup`.
+
 That's it
 =========
 
