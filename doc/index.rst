@@ -28,7 +28,7 @@ Here are the short instructions:
  * Edit the v1pi-wpa-supplicant.txt (not with notepad.exe)
  * Put it in a pi, and go to `http://v1pi.local <http://v1pi.local>`_
 
-The longer instructions, including auto wifi hotspot, and a bunch more detail are here:
+The longer instructions, including wifi hotspot, and a bunch more details are here:
 
 :doc:`setup`
 

@@ -11,21 +11,20 @@ v1pi has two ways to set up the WiFi:
    from any device on your WiFi network
  * Hot Spot: The pi will create an access point which your devices can connect to.
 
+Hot Spot
+========
 
-Auto Hot Spot
-=============
-
-The Auto Hot Spot feature will create a Hot Spot when there is no client connection.
+The Hot Spot feature will create a Hot Spot.
 
  * You don't have to do anything to set it up.
 
-   * The default ssid is ``v1pi``
-   * The default passphrase is ``raspberry``. See the setup instructions for how to change it.
+   * The default ssid is ``raspap-webui``
+   * The default passphrase is ``ChangeMe``. See the setup instructions for how to change it.
 
  * If your machine is in a location without WiFi coverage, this is a good option.
  * The pi will not have any access to the Internet, so updates and installing plugins will not be
    possible. You will have to connect to the Internet to get updates or plugins.
- * The IP Address of the machine will be ``192.168.50.1``. The bonjour hostname ``v1pi.local`` is
+ * The IP Address of the machine will be ``10.3.141.1``. The bonjour hostname ``v1pi.local`` is
    also available.
  * Since there is no Internet connection, it is more protected from attacks.
 
