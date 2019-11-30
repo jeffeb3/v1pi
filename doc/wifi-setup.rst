@@ -18,7 +18,7 @@ The Hot Spot feature will create a Hot Spot.
 
  * You don't have to do anything to set it up.
 
-   * The default ssid is ``raspap-webui``
+   * The default ssid is ``raspap-webgui``
    * The default passphrase is ``ChangeMe``. See the setup instructions for how to change it.
 
  * If your machine is in a location without WiFi coverage, this is a good option.
