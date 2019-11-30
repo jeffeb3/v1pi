@@ -22,6 +22,23 @@ def getServiceRunning(service):
     print("{} is unknown".format(service))
     return False
 
+def getServiceInstalled(service):
+    try:
+        output = subprocess.check_output(['service', service, 'status'])
+    except subprocess.CalledProcessError as err:
+        output = err.output
+    if 'active (running)' in output:
+        print("{} is running".format(service))
+        return True
+    if 'active (exited)' in output:
+        print("{} has exited".format(service))
+        return True
+    if 'inactive (dead)' in output:
+        print("{} is dead".format(service))
+        return True
+    print("{} is unknown".format(service))
+    return False
+
 def callService(service, command):
     print("Running service {} {}".format(service, command))
     subprocess.call(['sudo', '/usr/sbin/service', service, command])
@@ -34,17 +51,23 @@ def root():
         service = None
         if 'octoprint' in request.form:
             service = 'octoprint'
-        if 'cncjs' in request.form:
+        elif 'cncjs' in request.form:
             service = 'cncjs'
+        elif 'lighttpd' in request.form:
+            service = 'lighttpd'
+        else:
+            return "Not Logical"
 
         if 'Start' == request.form[service]:
             callService(service, 'start')
         elif 'Stop' == request.form[service]:
             callService(service, 'stop')
         elif 'Restart' == request.form[service]:
-            callService(service, 'Restart')
+            callService(service, 'restart')
 
     return render_template('landingPage.html',
             octoprint_running=getServiceRunning("octoprint"),
+            raspap_installed=getServiceInstalled("lighttpd"),
+            raspap_running=getServiceRunning("lighttpd"),
             cncjs_running=getServiceRunning("cncjs"))
 
