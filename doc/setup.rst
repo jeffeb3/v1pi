@@ -26,7 +26,6 @@ Step 3: Configure WiFi (Optional)
 If you don't want to connect this pi to your home WiFi network, then continue to the next step. If
 you're not sure, or you want to connect to your home WiFi, look at :doc:`wifi-setup`. Then come right back.
 
-
 Step 4: Start it for the first time
 ===================================
 
@@ -36,7 +35,7 @@ printer and power it up.
 The first time the pi boots, it will do some work to expand the filesystem to the full SD card size,
 and generally setting things up. This takes a few minutes.
 
-If you are using the pi as a hotspot (it's not connected to your WiFi) then the WiFi network may not
+If you are using the pi as a hotspot (it's *not* connected to your WiFi) then the WiFi network may not
 show up on the first boot (I'm not sure why, but in my tests, it wasn't coming up the first time).
 Wait a few minutes (literally 5 minutes is fine) and cycle power. Then wait a few more minutes
 and it should show up.
@@ -47,11 +46,14 @@ Step 5: Connecting
 Connect to Hot Spot
 -------------------
 
-* The Hot Spot will show up with an ssid of ``v1pi`` and a connection password of ``raspberry``.
+* The Hot Spot will show up with an ssid of ``raspap-webui`` and a connection password of
+  ``ChangeMe``.
 * Your computer might complain that you don't have an Internet connection. That's normal. The pi
   doesn't have Internet.
-* If you connect with this method, the pi's ip address is ``192.168.50.1``
-* Open `http://192.168.50.1 <http://192.168.50.1>`_
+* If you connect with this method, the pi's ip address is ``10.3.141.1``
+* Open `http://10.3.141.1 <http://10.3.141.1>`_
+* The RaspAP UI has a username of "admin" and a password of "secret.
+* Change your password! See below.
 
 Connect Through Your WiFi
 -------------------------
@@ -84,6 +86,12 @@ The landing page will give you a few sparse links to information about this imag
 
 .. image:: img/cncjs.png
 
+* RaspAP: Administration for the networking on the pi. Be careful, if you're editing this on the
+  network and you break it, how will you reconnect to fix it? Also, make sure you change the
+  passwords.
+
+.. image:: img/raspap.png
+
 Step 7: Change the Passwords
 ============================
 
@@ -110,21 +118,22 @@ You'll need to log into the pi to change the password.
 Changing the Hot Spot Password
 ------------------------------
 
-The hot spot *default* password is ``raspberry``. Any device within range can connect, and find your
+The hot spot *default* password is ``ChangeMe``. Any device within range can connect, and find your
 pi, or the web interface, and control your pi, and your CNC machine. It gets worse if you think
 about an infected device being in range, and not just a panel van with an antenna on it.
 
 Changing the password is easy, and will help you sleep at night. OK, maybe not, but writing this
 will help me sleep at night.
 
-The password is stored on the root file system in ``/etc/hostapd/hostapd.conf``. Log into the pi
-through ssh, or you can edit the file on the sd card from your computer (but not in notepad, use
-notepad++)
+1. Open the webpage: `http://10.3.141.1 <http://10.3.141.1>`_.
 
-    ``sudo nano /etc/hostapd/hostapd.conf``
+1. Click on ``Configure Hotspot``.
 
-Go down to where it says: ``wpa_passphrase=raspberry`` and change the word raspberry to something
-you want. Save the file (in nano, it's [Ctrl+x], y, enter).
+1. Click on ``Security``.
+
+1. Change the password.
+
+Also in RapsAP, there is the webui password. Change it in ``System``.
 
 Set up a Webcam
 =========
