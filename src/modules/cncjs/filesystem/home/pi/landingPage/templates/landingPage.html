@@ -12,6 +12,7 @@
                 <h2>Serve up Octoprint or CNC.js</h2>
                 <div class="about">
                     <a href="https://github.com/jeffeb3/v1pi">[about]</a>
+                    <a href="https://github.com/sponsors/jeffeb3">[sponsor]</a>
                 </div>
             </header>
         </div>
@@ -63,6 +64,33 @@
                 {% endif %}
             </div>
         </div>
+        {% if raspap_installed %}
+        <div class="row">
+            <div class="column">
+                <a style="color: #000;" href="#" onclick="javascript:window.location.port=8080">
+                    <div class="raspap">
+                        <img src="static/logo_raspap.png" width="200" height="200">
+                        <br>
+                        RaspAP
+                    </div>
+                </a>
+                {% if raspap_running %}
+                    <h3>RaspAP Running
+                        <form method="post" action="/">
+                            <input type="submit" name="lighttpd" value="Stop">
+                            <input type="submit" name="lighttpd" value="Restart">
+                        </form>
+                    </h3>
+                {% else %}
+                    <h3>RaspAP <em>Stopped</em>
+                        <form method="post" action="/">
+                            <input type="submit" name="lighttpd" value="Start">
+                        </form>
+                    </h3>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
 
         <div class="container">
             <footer>
