@@ -18,6 +18,9 @@ echo "--- RaspAP Install"
 echo "--- RaspAP apt Install"
 apt-get update
 apt-get install -y git lighttpd php7.1-cgi hostapd dnsmasq vnstat
+#cleanup
+apt-get clean
+apt-get autoremove -y
 
 echo "--- RaspAP lighttpd Install"
 lighttpd-enable-mod fastcgi-php
