@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# RaspAP install script
+#   Installs RaspAP in a raspberry pi image
+# Written by JeffEb3
+# GPL V3
+########
+set -x
+set -e
+
+export LC_ALL=C
+
+source /common.sh
+
+### Script ####
+
+pushd /home/pi
+
+  echo "--- Downloading raspap installer"
+  curl -sL $RASPAP_URL | bash -s -- --yes
+
+popd
