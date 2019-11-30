@@ -1,0 +1,6 @@
+###############################################################################
+# All our config settings must start with RASPAP
+
+# RASPAP Script
+[ -n "$RASPAP_URL" ]  || RASPAP_URL="https://install.raspap.com"
+
