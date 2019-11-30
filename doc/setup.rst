@@ -46,7 +46,7 @@ Step 5: Connecting
 Connect to Hot Spot
 -------------------
 
-* The Hot Spot will show up with an ssid of ``raspap-webui`` and a connection password of
+* The Hot Spot will show up with an ssid of ``raspap-webgui` and a connection password of
   ``ChangeMe``.
 * Your computer might complain that you don't have an Internet connection. That's normal. The pi
   doesn't have Internet.
@@ -133,7 +133,7 @@ will help me sleep at night.
 
 1. Change the password.
 
-Also in RapsAP, there is the webui password. Change it in ``System``.
+Also in RapsAP, there is the webgui password. Change it in ``System``.
 
 Set up a Webcam
 =========
