@@ -34,6 +34,8 @@ Then connect with 115200 baud. My miniterm.py connection looks like this:
 miniterm.py /dev/ttyUSB0 115200 --eol LF --raw
 ```
 
+[USB UART](https://amzn.to/2syfraB)
+
 The nice thing about this is, you probably already have a computer you're working with, and you
 don't need another keyboard/mouse/monitor. But if the pi isn't connecting to wifi, then you need a
 way to kick it. This is one of the easiest ways.
