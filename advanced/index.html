@@ -36,7 +36,7 @@
     
     
       
-        <title>Setup - v1pi</title>
+        <title>Advanced - v1pi</title>
       
     
     
@@ -87,7 +87,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#set-up" tabindex="1" class="md-skip">
+      <a href="#advanced-set-up" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -113,7 +113,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Setup
+                Advanced
               
             </span>
           
@@ -234,20 +234,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Setup" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../setup/" title="Setup" class="md-nav__link">
       Setup
     </a>
-    
   </li>
 
     
@@ -279,11 +270,20 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../advanced/" title="Advanced" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Advanced" class="md-nav__link md-nav__link--active">
       Advanced
     </a>
+    
   </li>
 
     
@@ -314,148 +314,38 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/jeffeb3/v1pi/edit/master/docs/setup.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/jeffeb3/v1pi/edit/master/docs/advanced.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="set-up">Set Up<a class="headerlink" href="#set-up" title="Permanent link">&para;</a></h1>
-<h1 id="lets-do-it">Let&rsquo;s Do It<a class="headerlink" href="#lets-do-it" title="Permanent link">&para;</a></h1>
-<p>Great, let&rsquo;s flash an SD card with the image and get to making dust in the shop!</p>
-<h1 id="step-1-download-the-image">Step 1: Download the image<a class="headerlink" href="#step-1-download-the-image" title="Permanent link">&para;</a></h1>
-<p>Download the most recent stable release from github: <a href="https://github.com/jeffeb3/v1pi/releases">https://github.com/jeffeb3/v1pi/releases</a></p>
-<h1 id="step-2-copy-the-data-to-the-sd-card">Step 2: Copy the data to the SD card<a class="headerlink" href="#step-2-copy-the-data-to-the-sd-card" title="Permanent link">&para;</a></h1>
-<p>The most general option is Etcher: <a href="https://etcher.io/">Get Etcher</a></p>
-<p>More details: <a href="https://www.raspberrypi.org/magpi/pi-sd-etcher/">Burn SD cards with Etcher</a></p>
-<h1 id="step-3-configure-wifi-optional">Step 3: Configure WiFi (Optional)<a class="headerlink" href="#step-3-configure-wifi-optional" title="Permanent link">&para;</a></h1>
-<p>If you don&rsquo;t want to connect this pi to your home WiFi network, then continue to the next step. If
-you&rsquo;re not sure, or you want to connect to your home WiFi, look at <a href="../wifi/">wifi-setup</a>. Then come right back.</p>
-<h1 id="step-4-start-it-for-the-first-time">Step 4: Start it for the first time<a class="headerlink" href="#step-4-start-it-for-the-first-time" title="Permanent link">&para;</a></h1>
-<p>Safely remove your SD card, or call umount/sync on Linux, and put the card in the pi. Connect the
-printer and power it up.</p>
-<p>The first time the pi boots, it will do some work to expand the filesystem to the full SD card size,
-and generally setting things up. This takes a few minutes.</p>
-<h1 id="step-5-connecting">Step 5: Connecting<a class="headerlink" href="#step-5-connecting" title="Permanent link">&para;</a></h1>
-<h2 id="connect-to-hot-spot">Connect to Hot Spot<a class="headerlink" href="#connect-to-hot-spot" title="Permanent link">&para;</a></h2>
+                <h1 id="advanced-set-up">Advanced Set Up<a class="headerlink" href="#advanced-set-up" title="Permanent link">&para;</a></h1>
+<h1 id="changing-the-hostname">Changing the Hostname<a class="headerlink" href="#changing-the-hostname" title="Permanent link">&para;</a></h1>
+<p>The hostname is <code>v1pi</code> by default. But if you have more than one on a network, or you just want to
+name it something else, you can by editing two files.</p>
 <div class="admonition info">
-<p class="admonition-title">Info</p>
-<ul>
-<li>The default SSID is <code>v1pi</code></li>
-<li>The default Password is <code>ChangeMe</code></li>
-<li>The default ip is <code>10.3.141.1</code>. pi is 3.141.</li>
-<li>The default username/password for RaspAP is <code>admin</code>/<code>secret</code></li>
-</ul>
+<p class="admonition-title">/etc/hostname</p>
+<p>Change /etc/hostname. There is only one word inside hostname, and it&rsquo;s whatever you want the
+hostname to be.</p>
 </div>
-<ul>
-<li>The Hot Spot will show up with an ssid of <code>v1pi</code> and a connection password of
-  <code>ChangeMe</code>.</li>
-<li>Your computer might complain that you don&rsquo;t have an Internet connection. That&rsquo;s normal. The pi
-  doesn&rsquo;t have Internet.</li>
-<li>If you connect with this method, the pi&rsquo;s ip address is <code>10.3.141.1</code></li>
-<li>Open <a href="http://10.3.141.1">http://10.3.141.1</a></li>
-<li>The RaspAP UI has a username of <code>admin</code> and a password of <code>secret</code>.</li>
-<li>Change your password! See below.</li>
-</ul>
-<h2 id="connect-through-your-wifi">Connect Through Your WiFi<a class="headerlink" href="#connect-through-your-wifi" title="Permanent link">&para;</a></h2>
-<ul>
-<li>The pi will get it&rsquo;s IP address from your router. If you know how to find the IP address from your
-  router, then you can do that, and put <code>http://&lt;the ip address&gt;</code> in your browser&rsquo;s address bar.</li>
-<li>
-<p>The pi will also advertise it&rsquo;s address via <a href="http://v1pi.local">http://v1pi.local</a></p>
-</li>
-<li>
-<p>Macs: Just go there.</p>
-</li>
-<li>Linux (including other pi&rsquo;s): Install avahi-daemon, and then go there.</li>
-<li>Windows: Check out Adafruit&rsquo;s guide
-      <a href="https://learn.adafruit.com/bonjour-zeroconf-networking-for-windows-and-linux/overview">Here</a></li>
-<li>
-<p>Android: I haven&rsquo;t got a good way to do this from android, so I would <code>ping v1pi.local</code> from a
-    computer, and see what address it&rsquo;s pinging, and put that in my android address bar.</p>
-</li>
-<li>
-<p>As a last resort, you can connect a monitor and keyboard. The pi will boot up to a login prompt.
-  The prompt will print the different addresses that will let you connect to the pi.</p>
-</li>
-</ul>
-<h1 id="step-6-use-it">Step 6: Use it<a class="headerlink" href="#step-6-use-it" title="Permanent link">&para;</a></h1>
-<p>The landing page will give you a few sparse links to information about this image, and two options:</p>
-<ul>
-<li>Octoprint: Very mature server for 3D printers. There are a lot of great features, and plugins, but
-  it&rsquo;s use case is 99% 3D printing.</li>
-</ul>
-<p><img alt="image" src="../img/octoprint.png" /></p>
-<ul>
-<li>CNC.js: Simple, CNC interface. The Marlin support is especially new, but I&rsquo;ve been using it with
-  grbl for a long time, and I love how simple and effective it is.</li>
-</ul>
-<p><img alt="image" src="../img/cncjs.png" /></p>
-<ul>
-<li>RaspAP: Administration for the networking on the pi. Be careful, if you&rsquo;re editing this on the
-  network and you break it, how will you reconnect to fix it? Also, make sure you change the
-  passwords.</li>
-</ul>
-<p><img alt="image" src="../img/raspap.png" /></p>
-<h1 id="step-7-change-the-passwords">Step 7: Change the Passwords<a class="headerlink" href="#step-7-change-the-passwords" title="Permanent link">&para;</a></h1>
-<p>The default login password is raspberry, which the whole world knows. Even if you don&rsquo;t know how to
-use the command line, other people do, and they can do nasty things to you. There are many many
-things to do to improve security, but number one is to change the passwords.</p>
-<h2 id="changing-the-ssh-password">Changing the SSH password<a class="headerlink" href="#changing-the-ssh-password" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
-<p class="admonition-title">Info</p>
-<ul>
-<li>The default username is <code>pi</code></li>
-<li>The default password is <code>raspberry</code></li>
-<li>It is common knowledge, you should really change it.</li>
-</ul>
+<p class="admonition-title">/etc/hosts</p>
+<p><code>/etc/hosts/</code> is part of the networking, and it tells Linux what IP address to use for certain
+names. The v1pi&rsquo;s hostname is in there, so that it can always find itself. Find the line that
+says:
+<div class="codehilite"><pre><span></span>127.0.1.1   v1pi
+</pre></div>
+Change v1pi to your new hostname.</p>
 </div>
-<p>You&rsquo;ll need to log into the pi to change the password.</p>
-<ul>
-<li>
-<p>Connecting with an ssh client is the easiest way, after you know the ip address.</p>
-</li>
-<li>
-<p>Windows: putty.exe is an oldie and a goodie.</p>
-</li>
-<li>
-<p>Mac/Linux: <code>ssh pi@v1pi.local</code></p>
-</li>
-<li>
-<p>If you can&rsquo;t get ssh to work, you can also log in using a keyboard and monitor.</p>
-</li>
-<li>The default username is <code>pi</code> and the default password is <code>raspberry</code></li>
-<li>Change the password by running the <code>passwd</code> command.</li>
-<li>There is no root password set, so you don&rsquo;t have to change it. Any super user actions can be done
-  as pi with the <code>sudo</code> command.</li>
-</ul>
-<h2 id="changing-the-hot-spot-password">Changing the Hot Spot Password<a class="headerlink" href="#changing-the-hot-spot-password" title="Permanent link">&para;</a></h2>
-<p>The hot spot <em>default</em> password is <code>ChangeMe</code>. Any device within range can connect, and find your
-pi, or the web interface, and control your pi, and your CNC machine. It gets worse if you think
-about an infected device being in range, and not just a panel van with an antenna on it.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Be really careful in the &ldquo;Configure hotspot settings! It will sometimes change the interface,
-and if you save that, and restart, it will not show up again!</p>
-</div>
-<p>Changing the password is easy, and will help you sleep at night. OK, maybe not, but writing this
-will help me sleep at night.</p>
-<ol>
-<li>
-<p>Open the webpage: <a href="http://10.3.141.1">http://10.3.141.1</a>.</p>
-</li>
-<li>
-<p>Click on <code>Configure hotspot</code>.</p>
-</li>
-<li>
-<p>Click on <code>Security</code>.</p>
-</li>
-<li>
-<p>Change the password in the <code>PSK</code> field.</p>
-</li>
-</ol>
-<p><img alt="image" src="../img/psk.png" /></p>
-<p>Also in RapsAP, there is the webgui password. Change it in <code>Configure Auth</code></p>
-<h1 id="set-up-a-webcam">Set up a Webcam<a class="headerlink" href="#set-up-a-webcam" title="Permanent link">&para;</a></h1>
-<p>If you want to set up a webcam, the instructions are here <a href="../camera/">Camera Setup</a></p>
-<h1 id="thats-it">That&rsquo;s it<a class="headerlink" href="#thats-it" title="Permanent link">&para;</a></h1>
+<p>Reboot the pi, and you should be good to go.</p>
+<h1 id="debugging-through-uart">Debugging through UART<a class="headerlink" href="#debugging-through-uart" title="Permanent link">&para;</a></h1>
+<p>There&rsquo;s a good guide <a href="https://learn.adafruit.com/adafruits-raspberry-pi-lesson-5-using-a-console-cable/overview">here from adafruit</a></p>
+<p>But the key part is to add <code>enable_uart=1</code> to the bottom of /boot/config.txt.</p>
+<p>Then connect with 115200 baud. My miniterm.py connection looks like this:</p>
+<div class="codehilite"><pre><span></span>miniterm.py /dev/ttyUSB0 115200 --eol LF --raw
+</pre></div>
+
+<p>The nice thing about this is, you probably already have a computer you&rsquo;re working with, and you
+don&rsquo;t need another keyboard/mouse/monitor. But if the pi isn&rsquo;t connecting to wifi, then you need a
+way to kick it. This is one of the easiest ways.</p>
                 
                   
                 
@@ -476,7 +366,7 @@ will help me sleep at night.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href=".." title="Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../wifi/" title="Wifi" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -485,25 +375,11 @@ will help me sleep at night.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Introduction
+                Wifi
               </span>
             </div>
           </a>
         
-        
-          <a href="../camera/" title="Camera" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Camera
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>
