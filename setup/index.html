@@ -1,0 +1,537 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+    
+    
+      
+        <title>Setup - v1pi</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../v1.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="black" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#set-up" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="v1pi" class="md-header-nav__button md-logo">
+          
+            <img src="../img/favicon.ico" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              v1pi
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Setup
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/jeffeb3/v1pi/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    jeffeb3/v1pi
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="v1pi" class="md-nav__button md-logo">
+      
+        <img src="../img/favicon.ico" width="48" height="48">
+      
+    </a>
+    v1pi
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/jeffeb3/v1pi/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    jeffeb3/v1pi
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Setup" class="md-nav__link md-nav__link--active">
+      Setup
+    </a>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../camera/" title="Camera" class="md-nav__link">
+      Camera
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../wifi/" title="Wifi" class="md-nav__link">
+      Wifi
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/jeffeb3/v1pi/tree/master/docs/setup.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="set-up">Set Up<a class="headerlink" href="#set-up" title="Permanent link">&para;</a></h1>
+<h1 id="lets-do-it">Let&rsquo;s Do It<a class="headerlink" href="#lets-do-it" title="Permanent link">&para;</a></h1>
+<p>Great, let&rsquo;s flash an SD card with the image and get to making dust in the shop!</p>
+<h1 id="step-1-download-the-image">Step 1: Download the image<a class="headerlink" href="#step-1-download-the-image" title="Permanent link">&para;</a></h1>
+<p>Download the most recent stable release from github: <a href="https://github.com/jeffeb3/v1pi/releases">https://github.com/jeffeb3/v1pi/releases</a></p>
+<h1 id="step-2-copy-the-data-to-the-sd-card">Step 2: Copy the data to the SD card<a class="headerlink" href="#step-2-copy-the-data-to-the-sd-card" title="Permanent link">&para;</a></h1>
+<p>The most general option is Etcher: <a href="https://etcher.io/">Get Etcher</a></p>
+<p>More details: <a href="https://www.raspberrypi.org/magpi/pi-sd-etcher/">Burn SD cards with Etcher</a></p>
+<h1 id="step-3-configure-wifi-optional">Step 3: Configure WiFi (Optional)<a class="headerlink" href="#step-3-configure-wifi-optional" title="Permanent link">&para;</a></h1>
+<p>If you don&rsquo;t want to connect this pi to your home WiFi network, then continue to the next step. If
+you&rsquo;re not sure, or you want to connect to your home WiFi, look at <a href="../wifi/">wifi-setup</a>. Then come right back.</p>
+<h1 id="step-4-start-it-for-the-first-time">Step 4: Start it for the first time<a class="headerlink" href="#step-4-start-it-for-the-first-time" title="Permanent link">&para;</a></h1>
+<p>Safely remove your SD card, or call umount/sync on Linux, and put the card in the pi. Connect the
+printer and power it up.</p>
+<p>The first time the pi boots, it will do some work to expand the filesystem to the full SD card size,
+and generally setting things up. This takes a few minutes.</p>
+<h1 id="step-5-connecting">Step 5: Connecting<a class="headerlink" href="#step-5-connecting" title="Permanent link">&para;</a></h1>
+<h2 id="connect-to-hot-spot">Connect to Hot Spot<a class="headerlink" href="#connect-to-hot-spot" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li>The default SSID is <code>v1pi</code></li>
+<li>The default Password is <code>ChangeMe</code></li>
+<li>The default ip is <code>10.3.141.1</code>. pi is 3.141.</li>
+<li>The default username/password for RaspAP is <code>admin</code>/<code>secret</code></li>
+</ul>
+</div>
+<ul>
+<li>The Hot Spot will show up with an ssid of <code>v1pi</code> and a connection password of
+  <code>ChangeMe</code>.</li>
+<li>Your computer might complain that you don&rsquo;t have an Internet connection. That&rsquo;s normal. The pi
+  doesn&rsquo;t have Internet.</li>
+<li>If you connect with this method, the pi&rsquo;s ip address is <code>10.3.141.1</code></li>
+<li>Open <a href="http://10.3.141.1">http://10.3.141.1</a></li>
+<li>The RaspAP UI has a username of <code>admin</code> and a password of <code>secret</code>.</li>
+<li>Change your password! See below.</li>
+</ul>
+<h2 id="connect-through-your-wifi">Connect Through Your WiFi<a class="headerlink" href="#connect-through-your-wifi" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The pi will get it&rsquo;s IP address from your router. If you know how to find the IP address from your
+  router, then you can do that, and put <code>http://&lt;the ip address&gt;</code> in your browser&rsquo;s address bar.</li>
+<li>
+<p>The pi will also advertise it&rsquo;s address via <a href="http://v1pi.local">http://v1pi.local</a></p>
+</li>
+<li>
+<p>Macs: Just go there.</p>
+</li>
+<li>Linux (including other pi&rsquo;s): Install avahi-daemon, and then go there.</li>
+<li>Windows: Check out Adafruit&rsquo;s guide
+      <a href="https://learn.adafruit.com/bonjour-zeroconf-networking-for-windows-and-linux/overview">Here</a></li>
+<li>
+<p>Android: I haven&rsquo;t got a good way to do this from android, so I would <code>ping v1pi.local</code> from a
+    computer, and see what address it&rsquo;s pinging, and put that in my android address bar.</p>
+</li>
+<li>
+<p>As a last resort, you can connect a monitor and keyboard. The pi will boot up to a login prompt.
+  The prompt will print the different addresses that will let you connect to the pi.</p>
+</li>
+</ul>
+<h1 id="step-6-use-it">Step 6: Use it<a class="headerlink" href="#step-6-use-it" title="Permanent link">&para;</a></h1>
+<p>The landing page will give you a few sparse links to information about this image, and two options:</p>
+<ul>
+<li>Octoprint: Very mature server for 3D printers. There are a lot of great features, and plugins, but
+  it&rsquo;s use case is 99% 3D printing.</li>
+</ul>
+<p><img alt="image" src="../img/octoprint.png" /></p>
+<ul>
+<li>CNC.js: Simple, CNC interface. The Marlin support is especially new, but I&rsquo;ve been using it with
+  grbl for a long time, and I love how simple and effective it is.</li>
+</ul>
+<p><img alt="image" src="../img/cncjs.png" /></p>
+<ul>
+<li>RaspAP: Administration for the networking on the pi. Be careful, if you&rsquo;re editing this on the
+  network and you break it, how will you reconnect to fix it? Also, make sure you change the
+  passwords.</li>
+</ul>
+<p><img alt="image" src="../img/raspap.png" /></p>
+<h1 id="step-7-change-the-passwords">Step 7: Change the Passwords<a class="headerlink" href="#step-7-change-the-passwords" title="Permanent link">&para;</a></h1>
+<p>The default login password is raspberry, which the whole world knows. Even if you don&rsquo;t know how to
+use the command line, other people do, and they can do nasty things to you. There are many many
+things to do to improve security, but number one is to change the passwords.</p>
+<h2 id="changing-the-ssh-password">Changing the SSH password<a class="headerlink" href="#changing-the-ssh-password" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li>The default username is <code>pi</code></li>
+<li>The default password is <code>raspberry</code></li>
+<li>It is common knowledge, you should really change it.</li>
+</ul>
+</div>
+<p>You&rsquo;ll need to log into the pi to change the password.</p>
+<ul>
+<li>
+<p>Connecting with an ssh client is the easiest way, after you know the ip address.</p>
+</li>
+<li>
+<p>Windows: putty.exe is an oldie and a goodie.</p>
+</li>
+<li>
+<p>Mac/Linux: <code>ssh pi@v1pi.local</code></p>
+</li>
+<li>
+<p>If you can&rsquo;t get ssh to work, you can also log in using a keyboard and monitor.</p>
+</li>
+<li>The default username is <code>pi</code> and the default password is <code>raspberry</code></li>
+<li>Change the password by running the <code>passwd</code> command.</li>
+<li>There is no root password set, so you don&rsquo;t have to change it. Any super user actions can be done
+  as pi with the <code>sudo</code> command.</li>
+</ul>
+<h2 id="changing-the-hot-spot-password">Changing the Hot Spot Password<a class="headerlink" href="#changing-the-hot-spot-password" title="Permanent link">&para;</a></h2>
+<p>The hot spot <em>default</em> password is <code>ChangeMe</code>. Any device within range can connect, and find your
+pi, or the web interface, and control your pi, and your CNC machine. It gets worse if you think
+about an infected device being in range, and not just a panel van with an antenna on it.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be really careful in the &ldquo;Configure hotspot settings! It will sometimes change the interface,
+and if you save that, and restart, it will not show up again!</p>
+</div>
+<p>Changing the password is easy, and will help you sleep at night. OK, maybe not, but writing this
+will help me sleep at night.</p>
+<ol>
+<li>
+<p>Open the webpage: <a href="http://10.3.141.1">http://10.3.141.1</a>.</p>
+</li>
+<li>
+<p>Click on <code>Configure hotspot</code>.</p>
+</li>
+<li>
+<p>Click on <code>Security</code>.</p>
+</li>
+<li>
+<p>Change the password in the <code>PSK</code> field.</p>
+</li>
+</ol>
+<p><img alt="image" src="../img/psk.png" /></p>
+<p>Also in RapsAP, there is the webgui password. Change it in <code>Configure Auth</code></p>
+<h1 id="set-up-a-webcam">Set up a Webcam<a class="headerlink" href="#set-up-a-webcam" title="Permanent link">&para;</a></h1>
+<p>If you want to set up a webcam, the instructions are here <a href="../camera/">Camera Setup</a></p>
+<h1 id="thats-it">That&rsquo;s it<a class="headerlink" href="#thats-it" title="Permanent link">&para;</a></h1>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="Index" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Index
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../camera/" title="Camera" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Camera
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">CC-BY-SA</a> Copyright 2019 V1Engineering Inc.
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://v1engineering.com" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://shop.v1engineering.com" class="md-footer-social__link fa fa-shopping-cart"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.c648116f.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
