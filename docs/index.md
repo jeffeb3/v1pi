@@ -28,7 +28,9 @@ need much memory or processor at all. The pi4 is really very quick and has enoug
 for this project and more.
 
 [Raspberry Pi 4 Model B 2019 Quad Core 64 Bit WiFi Bluetooth (2GB)](https://amzn.to/2r2MnHX)
+
 [MicroSD Memory Card](https://amzn.to/2DxPn1C)
+
 [Raspberry Pi 4 Power Supply (USB-C)](https://amzn.to/33xweYg)
 
 A Raspberry pi 3B+ will work with wifi. I don't see any reason why older models won't, but I don't
