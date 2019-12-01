@@ -1,0 +1,115 @@
+#!/usr/bin/env bash
+# RaspAP install script
+#   Installs RaspAP in a raspberry pi image
+# Written by JeffEb3
+# GPL V3
+########
+set -x
+set -e
+
+export LC_ALL=C
+
+source /common.sh
+
+### Script ####
+
+echo "--- RaspAP Install"
+
+echo "--- RaspAP apt Install"
+apt-get update
+apt-get install -y git lighttpd php7.1-cgi hostapd dnsmasq vnstat
+#cleanup
+apt-get clean
+apt-get autoremove -y
+
+echo "--- RaspAP lighttpd Install"
+lighttpd-enable-mod fastcgi-php
+
+echo "--- RaspAP html Install"
+rm -rf /var/www/html
+git clone https://github.com/billz/raspap-webgui /var/www/html
+mv /var/www/html/app/icons/* /var/www/html
+chown -R www-data:www-data /var/www/html
+mkdir /etc/raspap
+mv /var/www/html/raspap.php /etc/raspap/
+chown -R www-data:www-data /etc/raspap
+
+echo "--- RaspAP sudoers Install"
+cat <<'EOT' >> /etc/sudoers
+# For security reasons, the www-data user which lighttpd runs under is not allowed to start or stop
+# daemons, or run commands like ifdown and ifup, all of which we want our page to do. So what I have
+# done is added the www-data user to the sudoers file, but with restrictions on what commands the
+# user can run
+
+www-data ALL=(ALL) NOPASSWD:/sbin/ifdown
+www-data ALL=(ALL) NOPASSWD:/sbin/ifup
+www-data ALL=(ALL) NOPASSWD:/bin/cat /etc/wpa_supplicant/wpa_supplicant.conf
+www-data ALL=(ALL) NOPASSWD:/bin/cat /etc/wpa_supplicant/wpa_supplicant-wlan[0-9].conf
+www-data ALL=(ALL) NOPASSWD:/bin/cp /tmp/wifidata /etc/wpa_supplicant/wpa_supplicant.conf
+www-data ALL=(ALL) NOPASSWD:/bin/cp /tmp/wifidata /etc/wpa_supplicant/wpa_supplicant-wlan[0-9].conf
+www-data ALL=(ALL) NOPASSWD:/sbin/wpa_cli -i wlan[0-9] scan_results
+www-data ALL=(ALL) NOPASSWD:/sbin/wpa_cli -i wlan[0-9] scan
+www-data ALL=(ALL) NOPASSWD:/sbin/wpa_cli -i wlan[0-9] reconfigure
+www-data ALL=(ALL) NOPASSWD:/sbin/wpa_cli -i wlan[0-9] select_network
+www-data ALL=(ALL) NOPASSWD:/bin/cp /tmp/hostapddata /etc/hostapd/hostapd.conf
+www-data ALL=(ALL) NOPASSWD:/bin/systemctl start hostapd.service
+www-data ALL=(ALL) NOPASSWD:/bin/systemctl stop hostapd.service
+www-data ALL=(ALL) NOPASSWD:/bin/systemctl start dnsmasq.service
+www-data ALL=(ALL) NOPASSWD:/bin/systemctl stop dnsmasq.service
+www-data ALL=(ALL) NOPASSWD:/bin/systemctl start openvpn-client@client
+www-data ALL=(ALL) NOPASSWD:/bin/systemctl stop openvpn-client@client
+www-data ALL=(ALL) NOPASSWD:/bin/cp /tmp/openvpn.ovpn /etc/openvpn/client/client.conf
+www-data ALL=(ALL) NOPASSWD:/bin/cp /tmp/authdata /etc/openvpn/client/login.conf
+www-data ALL=(ALL) NOPASSWD:/bin/cp /tmp/dnsmasqdata /etc/dnsmasq.conf
+www-data ALL=(ALL) NOPASSWD:/bin/cp /tmp/dhcpddata /etc/dhcpcd.conf
+www-data ALL=(ALL) NOPASSWD:/sbin/shutdown -h now
+www-data ALL=(ALL) NOPASSWD:/sbin/reboot
+www-data ALL=(ALL) NOPASSWD:/sbin/ip link set wlan[0-9] down
+www-data ALL=(ALL) NOPASSWD:/sbin/ip link set wlan[0-9] up
+www-data ALL=(ALL) NOPASSWD:/sbin/ip -s a f label wlan[0-9]
+www-data ALL=(ALL) NOPASSWD:/bin/cp /etc/raspap/networking/dhcpcd.conf /etc/dhcpcd.conf
+www-data ALL=(ALL) NOPASSWD:/etc/raspap/hostapd/enablelog.sh
+www-data ALL=(ALL) NOPASSWD:/etc/raspap/hostapd/disablelog.sh
+www-data ALL=(ALL) NOPASSWD:/etc/raspap/hostapd/servicestart.sh
+www-data ALL=(ALL) NOPASSWD:/etc/raspap/lighttpd/configport.sh
+www-data ALL=(ALL) NOPASSWD:/etc/raspap/openvpn/configauth.sh
+EOT
+
+echo "--- RaspAP Hostapd Install"
+mkdir /etc/raspap/hostapd
+mv /var/www/html/installers/*log.sh /etc/raspap/hostapd
+mv /var/www/html/installers/service*.sh /etc/raspap/hostapd
+chown -c root:www-data /etc/raspap/hostapd/*.sh
+chmod 750 /etc/raspap/hostapd/*.sh
+
+echo "--- RaspAP Configuration"
+mv /var/www/html/config/default_hostapd /etc/default/hostapd
+mv /var/www/html/config/hostapd.conf /etc/hostapd/hostapd.conf
+mv /var/www/html/config/dnsmasq.conf /etc/dnsmasq.conf
+mv /var/www/html/config/dhcpcd.conf /etc/dhcpcd.conf
+mv /var/www/html/config/config.php /var/www/html/includes/
+
+sed -i 's@\(server.port\s*=\s*\)80@\18080@' /etc/lighttpd/lighttpd.conf
+sed -i "s@raspi-webgui@$RASPAP_HOTSPOT_NAME@" /etc/hostapd/hostapd.conf
+
+echo "--- RaspAP PHP Optimization"
+sed -i -E 's/^session\.cookie_httponly\s*=\s*(0|([O|o]ff)|([F|f]alse)|([N|n]o))\s*$/session.cookie_httponly = 1/' /etc/php/7.1/cgi/php.ini
+sed -i -E 's/^;?opcache\.enable\s*=\s*(0|([O|o]ff)|([F|f]alse)|([N|n]o))\s*$/opcache.enable = 1/' /etc/php/7.1/cgi/php.ini
+phpenmod opcache
+
+echo "--- RaspAP rc.local Configuration"
+sed -i 's@exit 0@@' /etc/rc.local
+cat <<'EOT' >> /etc/rc.local
+echo 1 > /proc/sys/net/ipv4/ip_forward #RASPAP
+iptables -t nat -A POSTROUTING -j MASQUERADE #RASPAP
+iptables -t nat -A POSTROUTING -s 192.168.50.0/24 ! -d 192.168.50.0/24 -j MASQUERADE #RASPAP
+EOT
+echo 'exit 0' >> /etc/rc.local
+
+echo "--- RaspAP hostapd services"
+systemctl unmask hostapd.service
+systemctl enable hostapd.service
+
+mv /var/www/html/installers/raspap.service /lib/systemd/system
+systemctl enable raspap.service
+

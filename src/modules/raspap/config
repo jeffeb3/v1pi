@@ -1,0 +1,6 @@
+###############################################################################
+# All our config settings must start with RASPAP
+
+# RASPAP Script
+[ -n "$RASPAP_HOTSPOT_NAME" ] || RASPAP_HOTSPOT_NAME=${DIST_NAME,,}
+
