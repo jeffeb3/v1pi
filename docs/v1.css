@@ -1,0 +1,25 @@
+
+h1 {
+  color: #ea1717
+}
+
+h2, h3, h4, h5 {
+  color: #42413d
+}
+
+.md-header {
+  color: #ea1717
+}
+
+.md-typeset h1 {
+  color: #ea1717
+}
+
+.md-typeset a {
+  color: #ea1717
+}
+
+.md-nav__link--active {
+  color: #ea1717
+}
+
