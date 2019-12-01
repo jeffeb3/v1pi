@@ -27,6 +27,8 @@ As of v0.17.0, Raspberry Pi 4 is supported. This image doesn't include an X serv
 need much memory or processor at all. The pi4 is really very quick and has enough head room to work
 for this project and more.
 
+Here are some affiliate links to parts:
+
 [Raspberry Pi 4 Model B 2019 Quad Core 64 Bit WiFi Bluetooth (2GB)](https://amzn.to/2r2MnHX)
 
 [MicroSD Memory Card](https://amzn.to/2DxPn1C)
