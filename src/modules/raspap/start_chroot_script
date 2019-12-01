@@ -90,7 +90,7 @@ mv /var/www/html/config/dhcpcd.conf /etc/dhcpcd.conf
 mv /var/www/html/config/config.php /var/www/html/includes/
 
 sed -i 's@\(server.port\s*=\s*\)80@\18080@' /etc/lighttpd/lighttpd.conf
-sed -i 's@raspi-webgui@$RASPAP_HOTSPOT_NAME@' /etc/hostapd/hostapd.conf
+sed -i "s@raspi-webgui@$RASPAP_HOTSPOT_NAME@" /etc/hostapd/hostapd.conf
 
 echo "--- RaspAP PHP Optimization"
 sed -i -E 's/^session\.cookie_httponly\s*=\s*(0|([O|o]ff)|([F|f]alse)|([N|n]o))\s*$/session.cookie_httponly = 1/' /etc/php/7.1/cgi/php.ini
