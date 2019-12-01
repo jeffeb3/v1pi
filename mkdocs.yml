@@ -8,6 +8,7 @@ nav:
  - Setup: setup.md
  - Camera: camera.md
  - Wifi: wifi.md
+ - Advanced: advanced.md
 
 theme:
   name: 'material'
