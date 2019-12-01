@@ -20,6 +20,48 @@ in a dangerous situation, causing a fire that can quickly grow to serious damage
 machine unattended.** I am not responsible for anything you do, but I really don't want to hear about
 any tragedies from someone using my software.
 
+Equipment
+======
+
+As of v0.17.0, Raspberry Pi 4 is supported. This image doesn't include an X server, so it doesn't
+need much memory or processor at all. The pi4 is really very quick and has enough head room to work
+for this project and more.
+
+[Raspberry Pi 4 Model B 2019 Quad Core 64 Bit WiFi Bluetooth (2GB)](https://amzn.to/2r2MnHX)
+[MicroSD Memory Card](https://amzn.to/2DxPn1C)
+[Raspberry Pi 4 Power Supply (USB-C)](https://amzn.to/33xweYg)
+
+A Raspberry pi 3B+ will work with wifi. I don't see any reason why older models won't, but I don't
+have any in my supply anymore, and I won't be testing releases out on them.
+
+A raspberry pi zero W is very attractive, but it is _right_ on the edge of working.
+
+[Raspberry Pi Zero W (wireless) w/ PSU and 16GB SD](https://amzn.to/2DBYPBa)
+
+Download
+======
+
+The latest releases are here.
+
+https://github.com/jeffeb3/v1pi/releases
+
+Which version
+-------------
+
+There are two versions:
+
+1. Hotspot
+1. No Hotspot
+
+When possible, I try to accommodate people who don't have access to wifi where their v1 machine is.
+So if you have barn with no wifi, then you can download the "hotspot" version, and the pi will make
+it's own access point, or hot spot.
+
+If you have wifi, or hard wired ethernet, then you don't need the hotspot.
+
+The RaspAP web portal controls the hotspot (RASPberry Access Point). It's only in the hotspot
+version.
+
 Set Up
 ======
 
