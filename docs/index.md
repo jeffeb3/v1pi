@@ -5,7 +5,7 @@ What is it?
 ===========
 
 It's an image for a raspberry pi, where I've configured as much as possible to help you get started
-quickly making things with your [v1engineering.com](v1engineering.com) machines.
+quickly making things with your [v1engineering.com](http://v1engineering.com) machines.
 
 ![image](img/v1pi.png)
 
