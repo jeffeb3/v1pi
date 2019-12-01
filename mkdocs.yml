@@ -1,0 +1,69 @@
+site_name: v1pi
+repo_name: jeffeb3/v1pi
+repo_url: https://github.com/jeffeb3/v1pi/
+edit_uri: 'edit/master/docs/'
+
+nav:
+ - Introduction: index.md
+ - Setup: setup.md
+ - Camera: camera.md
+ - Wifi: wifi.md
+
+theme:
+  name: 'material'
+  palette:
+    primary: 'black'
+    accent: 'red'
+  logo: "img/favicon.ico"
+  favicon: "img/favicon.ico"
+
+extra:
+  version: 0.17.0
+  social:
+    - type: 'github'
+      link: 'https://github.com/jeffeb3'
+    - type: 'twitter'
+      link: 'https://twitter.com/jeffeb3'
+    - type: 'users'
+      link: 'https://github.com/sponsors/jeffeb3'
+    - type: 'usd'
+      link: 'https://liberapay.com/jeffeb3'
+    - type: 'globe'
+      link: 'https://v1engineering.com'
+
+extra_css: [v1.css]
+
+extra_javascript:
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+
+copyright: "<a href=\"https://github.com/jeffeb3/v1pi/tree/master/LICENSE.md\">GPL 3.0</a>"
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - pyembed.markdown
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.extra
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - sane_lists
+  - smarty
+  - toc:
+      permalink: true
+  - lightgallery
+  - pymdownx.extra
+

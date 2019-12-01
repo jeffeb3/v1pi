@@ -1,3 +1,5 @@
 src/image/*.zip
 src/workspace
 src/build.log
+site/
+venv/

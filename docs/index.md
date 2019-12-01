@@ -1,18 +1,19 @@
 
-#############
-V1PI
-#############
+# V1PI
 
 What is it?
 ===========
 
 It's an image for a raspberry pi, where I've configured as much as possible to help you get started
-quickly making things with your `v1engineering.com <v1engineering.com>`_ machines.
+quickly making things with your [v1engineering.com](v1engineering.com) machines.
 
-.. image:: img/v1pi.png
+![image](img/v1pi.png)
 
 Safety Notice
 =============
+
+!!! warning
+    Don't leave your machine unattended!
 
 Please be safe. CNC routers, even small ones, with tiny bits can make mistakes, and quickly end up
 in a dangerous situation, causing a fire that can quickly grow to serious damage. **Don't leave your
@@ -24,14 +25,11 @@ Set Up
 
 Here are the short instructions:
 
- * Flash the SD with the `image <https://github.com/jeffeb3/v1pi/releases>`_
+ * Flash the SD with the [image](https://github.com/jeffeb3/v1pi/releases)
  * Edit the v1pi-wpa-supplicant.txt (not with notepad.exe)
- * Put it in a pi, and go to `http://v1pi.local <http://v1pi.local>`_
+ * Put it in a pi, and go to [http://v1pi.local](http://v1pi.local)
 
-The longer instructions, including wifi hotspot, and a bunch more details are here:
-
-:doc:`setup`
-
+The longer instructions, including wifi hotspot, and a bunch more [details are here](setup.md):
 
 More Information
 ================
@@ -44,12 +42,5 @@ Be sure to look at the (much more detailed) documentation from OctoPi, OctoPrint
  * OctoPi: https://octopi.octoprint.org/
  * OctoPrint: https://octoprint.org/
  * CNC.js: https://cnc.js.org/
+ * RaspAP: https://raspap.com
 
-More Documentation
-==================
-
-1. :doc:`setup`
-
-1. :doc:`wifi-setup`
-
-1. :doc:`camera-setup`
