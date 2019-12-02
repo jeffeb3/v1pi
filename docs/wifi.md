@@ -38,6 +38,13 @@ The Hot Spot feature will create a Hot Spot.
    also available.
  * Since there is no Internet connection, it is more protected from attacks.
 
+??? "Trouble with WiFi Dongle and AP?"
+    I have an older pi without builtin wifi, and the dongle I have shows up as v1pi, but it never
+    connects. The 0W, 3B+, and 4 I have all work fine. RaspAP recommends this dongle if you need AP
+    over a dongle:
+
+    [Edimax EW-7811UN](https://amzn.to/33IjDRW)
+
 Client Connection
 =================
 
