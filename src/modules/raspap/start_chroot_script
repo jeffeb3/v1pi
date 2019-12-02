@@ -89,7 +89,7 @@ mv /var/www/html/config/dnsmasq.conf /etc/dnsmasq.conf
 mv /var/www/html/config/dhcpcd.conf /etc/dhcpcd.conf
 mv /var/www/html/config/config.php /var/www/html/includes/
 
-sed -i 's@\(server.port\s*=\s*\)80@\18080@' /etc/lighttpd/lighttpd.conf
+sed -i 's@\(server.port\s*=\s*\)80@\17080@' /etc/lighttpd/lighttpd.conf
 sed -i "s@raspi-webgui@$RASPAP_HOTSPOT_NAME@" /etc/hostapd/hostapd.conf
 
 echo "--- RaspAP PHP Optimization"
