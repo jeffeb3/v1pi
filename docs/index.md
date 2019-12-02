@@ -42,6 +42,12 @@ A raspberry pi zero W is very attractive, but it is _right_ on the edge of worki
 
 [Raspberry Pi Zero W (wireless) w/ PSU and 16GB SD](https://amzn.to/2DBYPBa)
 
+If you have a pi without wifi, a wifi dongle that you have will probably work for the no-hotspot
+version. But the one I have on a pi2b doesn't work with RaspAP. This is the dongle RaspAP suggests.
+At $25, a new pi4 looks like a pretty solid alternative.
+
+[Edimax EW-7811UN](https://amzn.to/33IjDRW)
+
 Download
 ======
 

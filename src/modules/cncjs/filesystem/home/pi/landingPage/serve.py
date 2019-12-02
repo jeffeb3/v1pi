@@ -26,18 +26,15 @@ def getServiceInstalled(service):
     try:
         output = subprocess.check_output(['service', service, 'status'])
     except subprocess.CalledProcessError as err:
-        output = err.output
-    if 'active (running)' in output:
-        print("{} is running".format(service))
+        if err.returncode == 4:
+            print("{} is not installed".format(service))
+            return False
+        else:
+            print("{} is found".format(service))
+            return True
+    else:
+        print("{} is found".format(service))
         return True
-    if 'active (exited)' in output:
-        print("{} has exited".format(service))
-        return True
-    if 'inactive (dead)' in output:
-        print("{} is dead".format(service))
-        return True
-    print("{} is unknown".format(service))
-    return False
 
 def callService(service, command):
     print("Running service {} {}".format(service, command))
