@@ -67,6 +67,31 @@
     
     
       
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-154250450-1", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -452,6 +477,9 @@ will help me sleep at night.</p>
 </li>
 </ol>
 <p><img alt="image" src="../img/psk.png" /></p>
+<ol>
+<li>Reboot the pi. The easiest way is the <code>reboot</code> button in the system menu of raspap.</li>
+</ol>
 <p>Also in RapsAP, there is the webgui password. Change it in <code>Configure Auth</code></p>
 <h1 id="set-up-a-webcam">Set up a Webcam<a class="headerlink" href="#set-up-a-webcam" title="Permanent link">&para;</a></h1>
 <p>If you want to set up a webcam, the instructions are here <a href="../camera/">Camera Setup</a></p>
