@@ -143,6 +143,8 @@ will help me sleep at night.
 
 ![image](img/psk.png)
 
+1. Reboot the pi. The easiest way is the `reboot` button in the system menu of raspap.
+
 Also in RapsAP, there is the webgui password. Change it in `Configure Auth`
 
 Set up a Webcam

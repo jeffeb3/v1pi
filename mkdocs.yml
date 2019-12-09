@@ -68,3 +68,6 @@ markdown_extensions:
   - lightgallery
   - pymdownx.extra
 
+google_analytics:
+  - 'UA-154250450-1'
+  - 'auto'
