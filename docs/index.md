@@ -29,24 +29,24 @@ for this project and more.
 
 Here are some affiliate links to parts:
 
-[Raspberry Pi 4 Model B 2019 Quad Core 64 Bit WiFi Bluetooth (2GB)](https://amzn.to/2r2MnHX)
+[Raspberry Pi 4 Model B 2019 Quad Core 64 Bit WiFi Bluetooth (2GB)](https://amzn.to/2Ee9an1)
 
-[MicroSD Memory Card](https://amzn.to/2DxPn1C)
+[MicroSD Memory Card](https://amzn.to/2LOhApq)
 
-[Raspberry Pi 4 Power Supply (USB-C)](https://amzn.to/33xweYg)
+[Raspberry Pi 4 Power Supply (USB-C)](https://amzn.to/2EgMYc4)
 
 A Raspberry pi 3B+ will work with wifi. I don't see any reason why older models won't, but I don't
 have any in my supply anymore, and I won't be testing releases out on them.
 
 A raspberry pi zero W is very attractive, but it is _right_ on the edge of working.
 
-[Raspberry Pi Zero W (wireless) w/ PSU and 16GB SD](https://amzn.to/2DBYPBa)
+[Raspberry Pi Zero W (wireless) w/ PSU and 16GB SD](https://amzn.to/2YQGTwn)
 
 If you have a pi without wifi, a wifi dongle that you have will probably work for the no-hotspot
 version. But the one I have on a pi2b doesn't work with RaspAP. This is the dongle RaspAP suggests.
 At $25, a new pi4 looks like a pretty solid alternative.
 
-[Edimax EW-7811UN](https://amzn.to/33IjDRW)
+[Edimax EW-7811UN](https://amzn.to/2LPl5Mw)
 
 Download
 ======
