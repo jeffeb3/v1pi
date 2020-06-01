@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.2">
     
     
       
@@ -356,8 +356,8 @@ hostname to be.</p>
 <p><code>/etc/hosts/</code> is part of the networking, and it tells Linux what IP address to use for certain
 names. The v1pi&rsquo;s hostname is in there, so that it can always find itself. Find the line that
 says:
-<div class="codehilite"><pre><span></span>127.0.1.1   v1pi
-</pre></div>
+<div class="highlight"><pre><span></span><code>127.0.1.1   v1pi
+</code></pre></div>
 Change v1pi to your new hostname.</p>
 </div>
 <p>Reboot the pi, and you should be good to go.</p>
@@ -365,8 +365,8 @@ Change v1pi to your new hostname.</p>
 <p>There&rsquo;s a good guide <a href="https://learn.adafruit.com/adafruits-raspberry-pi-lesson-5-using-a-console-cable/overview">here from adafruit</a></p>
 <p>But the key part is to add <code>enable_uart=1</code> to the bottom of /boot/config.txt.</p>
 <p>Then connect with 115200 baud. My miniterm.py connection looks like this:</p>
-<div class="codehilite"><pre><span></span>miniterm.py /dev/ttyUSB0 115200 --eol LF --raw
-</pre></div>
+<div class="highlight"><pre><span></span><code>miniterm.py /dev/ttyUSB0 115200 --eol LF --raw
+</code></pre></div>
 
 <p><a href="https://amzn.to/34eiuSp">Buy USB UART Here</a></p>
 <p>The nice thing about this is, you probably already have a computer you&rsquo;re working with, and you
@@ -448,7 +448,7 @@ way to kick it. This is one of the easiest ways.</p>
     
       <script src="../assets/javascripts/application.c648116f.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:".."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
