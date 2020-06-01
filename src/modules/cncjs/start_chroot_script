@@ -34,7 +34,7 @@ pushd /home/pi
 
       # make links to the logos
       pushd landingPage/static
-        ln -s /usr/local/lib/node_modules/cncjs/dist/cnc/web/images/logo-badge-256x256.png logo_cncjs.png
+        ln -s /usr/local/lib/node_modules/cncjs/dist/cncjs/app/images/logo-badge-256x256.png logo_cncjs.png
         ln -s /home/pi/oprint/lib/python2.7/site-packages/octoprint/static/img/logo.png logo_octoprint.png
         ln -s /var/www/html/app/img/raspAP-logo.png logo_raspap.png
       popd
