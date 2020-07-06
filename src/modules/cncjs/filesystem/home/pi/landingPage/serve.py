@@ -3,7 +3,7 @@
 import subprocess
 
 from flask import Flask, render_template, request
-app = Flask("V1Pi Landing Page")
+app = Flask("Luban Landing Page")
 
 def getServiceRunning(service):
     try:
@@ -48,8 +48,8 @@ def root():
         service = None
         if 'octoprint' in request.form:
             service = 'octoprint'
-        elif 'cncjs' in request.form:
-            service = 'cncjs'
+        elif 'luban' in request.form:
+            service = 'luban'
         elif 'lighttpd' in request.form:
             service = 'lighttpd'
         else:
@@ -66,5 +66,5 @@ def root():
             octoprint_running=getServiceRunning("octoprint"),
             raspap_installed=getServiceInstalled("lighttpd"),
             raspap_running=getServiceRunning("lighttpd"),
-            cncjs_running=getServiceRunning("cncjs"))
+            cncjs_running=getServiceRunning("luban"))
 

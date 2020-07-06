@@ -2,10 +2,11 @@
 # All our config settings must start with NODEJS
 
 # node.js archive
-# The version of node.js needed for cnc.js is 6: https://cnc.js.org/
-[ -n "$NODEJS_VERSION_STRING" ]  || NODEJS_VERSION_STRING="v6.17.1"
-[ -n "$NODEJS_ARCH_STRING" ]     || NODEJS_ARCH_STRING="linux-armv6l"
+# The version of node.js needed 
+[ -n "$NODEJS_VERSION_STRING" ]  || NODEJS_VERSION_STRING="v10.16.0"
+[ -n "$NODEJS_ARCH_STRING" ]     || NODEJS_ARCH_STRING="linux-armv7l"
 [ -n "$NODEJS_VERSION_FOLDER" ]  || NODEJS_VERSION_FOLDER="node-$NODEJS_VERSION_STRING-$NODEJS_ARCH_STRING"
 [ -n "$NODEJS_VERSION_TAR" ]     || NODEJS_VERSION_TAR="$NODEJS_VERSION_FOLDER.tar.gz"
 [ -n "$NODEJS_VERSION_ARCHIVE" ] || NODEJS_VERSION_ARCHIVE="https://nodejs.org/dist/$NODEJS_VERSION_STRING/$NODEJS_VERSION_TAR"
+
 

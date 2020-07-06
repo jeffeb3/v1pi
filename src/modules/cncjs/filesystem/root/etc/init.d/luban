@@ -15,17 +15,17 @@
 # Author: Sami Olmari
 
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-DESC="CNC.js Daemon"
-NAME="cncjs"
-DAEMON=/usr/bin/cnc
+DESC="Luban.js Daemon"
+NAME="luban"
+DAEMON=/usr/bin/luban
 PIDFILE=/var/run/$NAME.pid
-PKGNAME=cncjs
+PKGNAME=luban
 SCRIPTNAME=/etc/init.d/$PKGNAME
 
 # Read configuration variable file if it is present
 [ -r /etc/default/$PKGNAME ] && . /etc/default/$PKGNAME
 
-# Exit if the cncjs is not installed
+# Exit if the luban is not installed
 [ -x "$DAEMON" ] || exit 0
 
 # Load the VERBOSE setting and other rcS variables
