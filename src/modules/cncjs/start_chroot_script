@@ -25,6 +25,9 @@ pushd /home/pi
 
     # start it by default
     update-rc.d cncjs defaults 95
+
+    # Also write this to this file, because that's what octoprint uses in their tracking statistics.
+    echo "$DIST_VERSION" > /etc/octopi_version
   fi
 
   if [ "$CNCJS_EDIT_HAPROXY" == "yes" ]
