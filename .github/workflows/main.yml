@@ -24,6 +24,7 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false # Allow all jobs to finish building
       matrix:
         hotspot:
           - hotspot
