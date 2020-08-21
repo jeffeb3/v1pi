@@ -2,6 +2,8 @@ export DIST_NAME=v1pi
 export DIST_VERSION=0.17.1
 export BASE_IMAGE_ENLARGEROOT=800
 
+source ./hotspot.sh
+
 echo $HOTSPOT
 
 if [[ "${HOTSPOT}" == "hotspot" ]]; then
