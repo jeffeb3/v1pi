@@ -20,7 +20,7 @@ jobs:
     env:
       V1PI_VERSION: ${{ github.event_name == 'release' && github.event.release.tag_name || 'unstable' }}
 
-    name: v1pi-build-${{ matrix.hotspot }}-${{ env.V1PI_VERSION }}
+    name: v1pi-build-${{ matrix.hotspot }}
     runs-on: ubuntu-latest
 
     strategy:
