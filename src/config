@@ -1,5 +1,9 @@
 export DIST_NAME=v1pi
 export DIST_VERSION=0.17.1
 export BASE_IMAGE_ENLARGEROOT=800
-#export MODULES="base(raspicam, network, nodejs, disable-services(octopi, cncjs), raspap, password-for-sudo)"
-export MODULES="base(raspicam, network, nodejs, disable-services(octopi, cncjs), password-for-sudo)"
+if [[ "${HOTSPOT}" == "hotspot" ]]; then
+  export MODULES="base(raspicam, network, nodejs, disable-services(octopi, cncjs), raspap, password-for-sudo)"
+else
+  export MODULES="base(raspicam, network, nodejs, disable-services(octopi, cncjs), password-for-sudo)"
+fi
+
