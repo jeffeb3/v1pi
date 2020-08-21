@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    name: v1pi-build-${{ matix.hotspot }}
+    name: v1pi-build-${{ matrix.hotspot }}
     runs-on: ubuntu-latest
 
     strategy:
