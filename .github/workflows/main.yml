@@ -16,7 +16,11 @@ on:
 
 jobs:
   build:
-    name: v1pi-build-${{ matrix.hotspot }}
+
+    env:
+      V1PI_VERSION: ${{ github.event_name == 'release' && github.event.release.tag_name || 'unstable' }}
+
+    name: v1pi-build-${{ matrix.hotspot }}-${{ env.V1PI_VERSION }}
     runs-on: ubuntu-latest
 
     strategy:
@@ -59,23 +63,23 @@ jobs:
       run: sudo modprobe loop && cd repository/src && sudo bash -x ./build_dist
 
     - name: Copy Output
-      run: cp ${{ github.workspace }}/repository/src/workspace/*-raspbian-buster-lite.img v1pi-${{matrix.hotspot}}.img
+      run: cp ${{ github.workspace }}/repository/src/workspace/*-raspbian-buster-lite.img "v1pi-${{ env.V1PI_VERSION }}-${{ matrix.hotspot }}".img
 
     - name: Zip Output
-      run: gzip v1pi-${{matrix.hotspot}}.img
+      run: zip -prq "v1pi-${{ env.V1PI_VERSION }}-${{ matrix.hotspot }}".zip "v1pi-${{ env.V1PI_VERSION }}-${{ matrix.hotspot }}".img
 
     - uses: actions/upload-artifact@v1
       with:
-        name: v1pi-${{matrix.hotspot}}.img.gz
-        path: v1pi-${{matrix.hotspot}}.img.gz
+        name: "v1pi-${{ env.V1PI_VERSION }}-${{ matrix.hotspot }}".zip
+        path: "v1pi-${{ env.V1PI_VERSION }}-${{ matrix.hotspot }}".zip
 
-    - name: Upload v1pi-${{ matrix.hotspot }}.img to release
+    - name: Upload img to release
       if: ${{ github.event_name == 'release' }}
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ github.event.release.upload_url }}
-        asset_path: v1pi-${{matrix.hotspot}}.img.gz
-        asset_name: v1pi-${{ matrix.hotspot }}.img.gz
+        asset_path: v1pi-${{ env.V1PI_VERSION }}-${{ matrix.hotspot }}.zip
+        asset_name: v1pi-${{ env.V1PI_VERSION }}-${{ matrix.hotspot }}.zip
         asset_content_type: application/zip
