@@ -9,14 +9,16 @@ on:
 
 
 jobs:
-  strategy:
-    matrix:
-      hotspot:
-        - hotspot
-        - no-hotspot
   build:
     name: v1pi-build-${{ matix.hotspot }}
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        hotspot:
+          - hotspot
+          - no-hotspot
+
     steps:
 
     - name: Install Dependencies
