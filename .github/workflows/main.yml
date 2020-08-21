@@ -71,8 +71,8 @@ jobs:
 
     - uses: actions/upload-artifact@v1
       with:
-        name: v1pi-${{ env.V1PI_VERSION }}-${{ matrix.hotspot }}.zip
-        path: v1pi-${{ env.V1PI_VERSION }}-${{ matrix.hotspot }}.zip
+        name: v1pi-${{ env.V1PI_VERSION }}-${{ matrix.hotspot }}
+        path: v1pi-${{ env.V1PI_VERSION }}-${{ matrix.hotspot }}.img
 
     - name: Upload img to release
       if: ${{ github.event_name == 'release' }}
