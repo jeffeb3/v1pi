@@ -1,12 +1,18 @@
 name: Build Image
 
 on:
+  schedule:
+    # At 10:15 each day. No idea what time zone this is...
+    - cron:  '15 10 * * *'
+
   pull_request: {}
   push:
     tags:
       - v*
 
-
+  release:
+    types:
+      - published
 
 jobs:
   build:
