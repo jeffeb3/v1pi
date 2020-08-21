@@ -4,8 +4,6 @@ export BASE_IMAGE_ENLARGEROOT=800
 
 source ./hotspot.sh
 
-echo $HOTSPOT
-
 if [[ "${HOTSPOT}" == "hotspot" ]]; then
   echo "Enable Hotspot"
   export MODULES="base(raspicam, network, nodejs, disable-services(octopi, cncjs), raspap, password-for-sudo)"
@@ -13,6 +11,3 @@ else
   echo "Disable Hotspot"
   export MODULES="base(raspicam, network, nodejs, disable-services(octopi, cncjs), password-for-sudo)"
 fi
-
-export
-
