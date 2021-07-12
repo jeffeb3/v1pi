@@ -52,7 +52,7 @@ jobs:
         submodules: true
 
     - name: Download Raspbian Image
-      run: cd repository/src/image && wget -q -c --trust-server-names 'https://downloads.raspberrypi.org/raspbian_lite_latest'
+      run: cd repository/src/image && wget -q -c --trust-server-names 'https://downloads.raspberrypi.org/raspios_lite_armhf_latest'
 
     - name: Update CustomPiOS Paths
       run: cd repository/src && ../../CustomPiOS/src/update-custompios-paths
@@ -64,7 +64,7 @@ jobs:
       run: sudo modprobe loop && cd repository/src && sudo bash -x ./build_dist
 
     - name: Copy Output
-      run: cp ${{ github.workspace }}/repository/src/workspace/*-raspbian-buster-lite.img "v1pi-${{ env.V1PI_VERSION }}-${{ matrix.hotspot }}".img
+      run: cp ${{ github.workspace }}/repository/src/workspace/*-raspios-buster-armhf-lite.img "v1pi-${{ env.V1PI_VERSION }}-${{ matrix.hotspot }}".img
 
     - name: Zip Output
       run: zip -prq "v1pi-${{ env.V1PI_VERSION }}-${{ matrix.hotspot }}".zip "v1pi-${{ env.V1PI_VERSION }}-${{ matrix.hotspot }}".img
