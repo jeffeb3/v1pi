@@ -44,7 +44,8 @@ pushd /home/pi
 
       #build virtualenv
       pushd landingPage
-        sudo -u pi virtualenv flask
+	    # Change to python2 if the landingPage is not comaptible
+        sudo -u pi python3 -m virtualenv --python=python3 virtualenv flask
         sudo -u pi ./flask/bin/pip install --upgrade pip
         PIP_DEFAULT_TIMEOUT=60 sudo -u pi ./flask/bin/pip install flask
       popd
