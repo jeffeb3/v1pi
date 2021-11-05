@@ -6,8 +6,8 @@ source ./hotspot.sh
 
 if [[ "${HOTSPOT}" == "hotspot" ]]; then
   echo "Enable Hotspot"
-  export MODULES="base(raspicam, network, nodejs, disable-services(octopi, cncjs), raspap, password-for-sudo)"
+  export MODULES="base(raspicam, network, nodejs, disable-services(cncjs), raspap, password-for-sudo)"
 else
   echo "Disable Hotspot"
-  export MODULES="base(raspicam, network, nodejs, disable-services(octopi, cncjs), password-for-sudo)"
+  export MODULES="base(raspicam, network, nodejs, disable-services(cncjs), password-for-sudo)"
 fi
