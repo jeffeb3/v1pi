@@ -2,7 +2,7 @@ name: Build Image
 
 on:
   schedule:
-    # At 10:15 each day. No idea what time zone this is...
+    # At 10:15 each day. No idea what time zone this is... UTC
     - cron:  '15 10 * * *'
 
   pull_request: {}
@@ -66,12 +66,13 @@ jobs:
       run: sudo modprobe loop && cd repository/src && sudo bash -x ./build_dist
 
     - name: Copy Output
-      run: cp ${{ github.workspace }}/repository/src/workspace/*-raspios-buster-armhf-lite.img "v1pi-${{ env.V1PI_VERSION }}-${{ matrix.hotspot }}".img
+      run: cp ${{ github.workspace }}/repository/src/workspace/*-raspios-bullseye-armhf-lite.img "v1pi-${{ env.V1PI_VERSION }}-${{ matrix.hotspot }}".img
 
     - name: Zip Output
       run: zip -prq "v1pi-${{ env.V1PI_VERSION }}-${{ matrix.hotspot }}".zip "v1pi-${{ env.V1PI_VERSION }}-${{ matrix.hotspot }}".img
 
-    - uses: actions/upload-artifact@v1
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v2
       with:
         name: v1pi-${{ env.V1PI_VERSION }}-${{ matrix.hotspot }}
         path: v1pi-${{ env.V1PI_VERSION }}-${{ matrix.hotspot }}.img
