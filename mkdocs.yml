@@ -19,7 +19,7 @@ theme:
   favicon: "img/favicon.ico"
 
 extra:
-  version: 0.17.0
+  version: 0.18.0
   social:
     - type: 'github'
       link: 'https://github.com/jeffeb3'
