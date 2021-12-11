@@ -9,11 +9,11 @@
     "commands": [
     {
       "title": "Reboot",
-      "commands": "sudo /sbin/reboot"
+      "commands": "sudo shutdown -r now"
     },
     {
       "title": "Shutdown",
-      "commands": "sudo /sbin/shutdown"
+      "commands": "sudo shutdown -h now"
     }
   ]
 }
