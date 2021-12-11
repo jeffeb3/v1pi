@@ -5,5 +5,15 @@
                 "autoReconnect": false
             }
         }
+    },
+    "commands": [
+    {
+      "title": "Reboot",
+      "commands": "sudo /sbin/reboot"
+    },
+    {
+      "title": "Shutdown",
+      "commands": "sudo /sbin/shutdown"
     }
+  ]
 }
