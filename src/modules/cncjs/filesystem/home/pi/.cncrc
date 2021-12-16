@@ -5,5 +5,15 @@
                 "autoReconnect": false
             }
         }
+    },
+    "commands": [
+    {
+      "title": "Reboot",
+      "commands": "sudo shutdown -r now"
+    },
+    {
+      "title": "Shutdown",
+      "commands": "sudo shutdown -h now"
     }
+  ]
 }
