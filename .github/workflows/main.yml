@@ -2,7 +2,7 @@ name: Build Image
 
 on:
   schedule:
-    # At 10:15 each day. No idea what time zone this is... UTC
+    # At 10:15 UTC each day.
     - cron:  '15 10 * * *'
 
   pull_request: {}
