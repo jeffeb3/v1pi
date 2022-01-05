@@ -7,13 +7,15 @@
         }
     },
     "commands": [
-    {
-      "title": "Reboot",
-      "commands": "sudo shutdown -r now"
-    },
-    {
-      "title": "Shutdown",
-      "commands": "sudo shutdown -h now"
-    }
-  ]
+        {
+            "title": "Reboot",
+            "commands": "sudo reboot",
+            "enabled": true
+        },
+        {
+            "title": "Shutdown",
+            "commands": "sudo poweroff",
+            "enabled": true
+        }
+    ]
 }
