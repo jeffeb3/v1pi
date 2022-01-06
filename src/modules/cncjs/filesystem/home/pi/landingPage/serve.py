@@ -10,13 +10,13 @@ def getServiceRunning(service):
         output = subprocess.check_output(['service', service, 'status'])
     except subprocess.CalledProcessError as err:
         output = err.output
-    if 'active (running)' in output:
+    if b'active (running)' in output:
         print("{} is running".format(service))
         return True
-    if 'active (exited)' in output:
+    if b'active (exited)' in output:
         print("{} has exited".format(service))
         return False
-    if 'inactive (dead)' in output:
+    if b'inactive (dead)' in output:
         print("{} is dead".format(service))
         return False
     print("{} is unknown".format(service))

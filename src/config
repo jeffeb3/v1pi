@@ -1,6 +1,6 @@
 export DIST_NAME=v1pi
-export DIST_VERSION=0.17.1
-export BASE_IMAGE_ENLARGEROOT=800
+export DIST_VERSION=0.18.0
+export BASE_IMAGE_ENLARGEROOT=1400
 
 source ./hotspot.sh
 

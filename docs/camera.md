@@ -15,8 +15,8 @@ Set up CNC.js settings
 
 ![image](img/cncjs_webcam_gear.png)
 
-2. Select "Use a M-JPEG stream over HTTP" option, and put this URL for your video stream: `webcam/?action=stream`.
-
+2. Select "Use a M-JPEG stream over HTTP" option, and put this URL for your video stream: `http://v1pi/webcam/?action=stream`.
+  - You may need to put in the IP address or add .local to v1pi to make it work for your network setup.
 ![image](img/cncjs_webcam_settings.png)
 
 2. Click Save Changes.
