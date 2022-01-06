@@ -9,12 +9,12 @@
     "commands": [
         {
             "title": "Reboot",
-            "commands": "sudo reboot",
+            "commands": "sudo shutdown -r now",
             "enabled": true
         },
         {
             "title": "Shutdown",
-            "commands": "sudo poweroff",
+            "commands": "sudo shutdown -h now",
             "enabled": true
         }
     ]
