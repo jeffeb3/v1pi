@@ -31,6 +31,9 @@ extra:
       link: 'https://liberapay.com/jeffeb3'
     - type: 'globe'
       link: 'https://v1engineering.com'
+  analytics:
+      provider: google
+      property: 'UA-154250450-1'
 
 extra_css: [v1.css]
 
@@ -67,7 +70,3 @@ markdown_extensions:
       permalink: true
   - lightgallery
   - pymdownx.extra
-
-google_analytics:
-  - 'UA-154250450-1'
-  - 'auto'
